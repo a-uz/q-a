@@ -1,6 +1,7 @@
 import React from 'react';
 
 import NotFound from './NotFound';
+import Comments from './Comments';
 
 import { getQuestion } from '../storage';
 
@@ -47,6 +48,7 @@ function Question({ match }) {
         </a>
       )}
       {!!description && <p>{description}</p>}
+      <Comments questionId={id} />
     </div>
   );
 }
