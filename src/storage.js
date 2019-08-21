@@ -51,6 +51,16 @@ async function getQuestions() {
 }
 
 /**
+ * Get question
+ * @param {number} id
+ */
+async function getQuestion(id) {
+  const db = await QuestionsDB;
+
+  return db.get('questions', id);
+}
+
+/**
  * Save question
  * @param {string} title
  * @param {string} [description]
@@ -146,6 +156,7 @@ async function updateCommentVoteCount(commentId, by) {
 
 export {
   getQuestions,
+  getQuestion,
   saveQuestion,
   updateQuestionVoteCount,
   getComments,
