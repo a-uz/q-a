@@ -1,7 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { getQuestions } from '../storage';
+import Vote from './Vote';
+
+import { getQuestions, updateQuestionVoteCount } from '../storage';
 
 import '../styles/Feed.css';
 
@@ -25,20 +27,39 @@ function Feed() {
     };
 
     fetchData();
-  }, []);
+  }, [loading]);
 
   if (!loading && questions.length === 0) {
     return <EmptyFeed />;
   }
 
+  async function upvote(id) {
+    await updateQuestionVoteCount(id, 1);
+    // Reload feed
+    setLoading(true);
+  }
+
+  async function downvote(id) {
+    await updateQuestionVoteCount(id, -1);
+    // Reload feed
+    setLoading(true);
+  }
+
   return (
     <div>
-      {questions.map(({ id, title, created }) => (
-        <div key={id} className="question">
-          <p>Posted: {new Date(created).toLocaleString()}</p>
-          <Link to={`/questions/${id}`}>
-            <b>{title}</b>
-          </Link>
+      {questions.map(({ id, title, created, votes }) => (
+        <div key={id} className="questionContainer">
+          <Vote
+            count={votes}
+            onUpvote={() => upvote(id)}
+            onDownvote={() => downvote(id)}
+          />
+          <div className="question">
+            <p>Posted: {new Date(created).toLocaleString()}</p>
+            <Link to={`/questions/${id}`}>
+              <b>{title}</b>
+            </Link>
+          </div>
         </div>
       ))}
     </div>

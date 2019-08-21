@@ -1,0 +1,22 @@
+.votes {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-right: 0.75rem;
+  min-width: 2rem;
+}
+
+.votes button {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+}
+
+.votes button:hover {
+  background-color: #eee;
+}
+
+.votes p {
+  margin: 0.25rem 0;
+}

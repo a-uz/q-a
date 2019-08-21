@@ -6,9 +6,14 @@
   margin-top: 10rem;
 }
 
-.question {
+.questionContainer {
+  display: flex;
   border-bottom: 1px solid #f2f1ef;
   padding: 0.5rem 0;
+}
+
+.question {
+  margin-top: 0.25rem;
 }
 
 .question a {
