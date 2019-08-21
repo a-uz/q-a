@@ -5,7 +5,7 @@ function Header() {
   return (
     <header>
       <h1>Q&A</h1>
-      <Link to="/questions/ask">Ask question</Link>
+      <Link to="/questions/new">Ask question</Link>
     </header>
   );
 }

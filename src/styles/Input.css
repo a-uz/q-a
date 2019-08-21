@@ -1,0 +1,29 @@
+.input {
+  margin-bottom: 0.5rem;
+}
+
+.input label {
+  display: flex;
+  flex-direction: column;
+}
+
+.input span i {
+  color: #7f8c8d;
+}
+
+.input input {
+  border: 1px solid #bfbfbf;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  padding: 0.375rem 0.75rem;
+  margin: 0.5rem 0;
+}
+
+.input .errorOutline {
+  border-color: red;
+}
+
+.input .errorText {
+  margin: 0;
+  color: red;
+}
