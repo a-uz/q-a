@@ -1,0 +1,28 @@
+.mainHeader {
+  border-bottom: 1px solid #ddd;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+}
+
+.mainHeader > div {
+  display: flex;
+  flex: 1;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  max-width: 64rem;
+  margin: 0 auto;
+}
+
+.mainHeader a {
+  color: #000;
+  text-decoration: none;
+}
+
+.mainHeader .a:visited {
+  color: #000;
+}
