@@ -23,7 +23,8 @@ function Feed() {
 
   React.useEffect(() => {
     const fetchData = async () => {
-      setQuestions(await getQuestions());
+      const questionsFromStorage = await getQuestions();
+      setQuestions(questionsFromStorage.reverse());
       setLoading(false);
     };
 
