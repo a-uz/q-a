@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Header from './Header';
-import Questions from './Questions';
+import Feed from './Feed';
 import Question from './Question';
 import NewQuestion from './NewQuestion';
 import NotFound from './NotFound';
@@ -17,7 +17,7 @@ function App() {
 
         <main>
           <Switch>
-            <Route exact path="/" component={Questions} />
+            <Route exact path="/" component={Feed} />
             <Route exact path="/questions/new" component={NewQuestion} />
             <Route exact path="/questions/:id" component={Question} />
             <Route component={NotFound} />
