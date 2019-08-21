@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "classnames": "^2.2.6",
+    "date-fns": "^2.0.0",
     "idb": "^4.0.4",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",

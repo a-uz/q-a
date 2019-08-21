@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import formatDistanceNow from 'date-fns/formatDistanceToNow';
 
 import Vote from './Vote';
 
@@ -55,7 +56,7 @@ function Feed() {
             onDownvote={() => downvote(id)}
           />
           <div className="question">
-            <p>Posted: {new Date(created).toLocaleString()}</p>
+            <p>Posted {formatDistanceNow(new Date(created))} ago</p>
             <Link to={`/questions/${id}`}>
               <b>{title}</b>
             </Link>
